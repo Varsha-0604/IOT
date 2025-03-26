@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - Care-Connect</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 h-screen">
+    <div class="flex h-full">
+        <!-- Left side - Registration Form -->
+        <div class="w-1/2 flex items-center justify-center">
+            <div class="bg-white p-8 rounded-lg shadow-lg w-96">
+                <h2 class="text-2xl font-bold text-emerald-600 mb-6 text-center">Create Account</h2>
+                <form id="registerForm" class="space-y-4">
+                    <div>
+                        <label for="registerName" class="block text-sm font-medium text-gray-700">Full Name</label>
+                        <input type="text" id="registerName" name="name" required
+                            class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-emerald-500 focus:border-emerald-500">
+                    </div>
+                    <div>
+                        <label for="registerEmail" class="block text-sm font-medium text-gray-700">Email</label>
+                        <input type="email" id="registerEmail" name="email" required
+                            class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-emerald-500 focus:border-emerald-500">
+                    </div>
+                    <div>
+                        <label for="registerPassword" class="block text-sm font-medium text-gray-700">Password</label>
+                        <input type="password" id="registerPassword" name="password" required
+                            class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-emerald-500 focus:border-emerald-500">
+                    </div>
+                    <div>
+                        <label for="registerRole" class="block text-sm font-medium text-gray-700">Role</label>
+                        <select id="registerRole" name="role" required
+                            class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-emerald-500 focus:border-emerald-500">
+                            <option value="patient">Patient</option>
+                            <option value="doctor">Doctor</option>
+                        </select>
+                    </div>
+                    <div id="specializationField" class="hidden">
+                        <label for="registerSpecialization" class="block text-sm font-medium text-gray-700">Specialization</label>
+                        <input type="text" id="registerSpecialization" name="specialization"
+                            class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-emerald-500 focus:border-emerald-500">
+                    </div>
+                    <div>
+                        <label for="registerPhone" class="block text-sm font-medium text-gray-700">Phone Number</label>
+                        <input type="tel" id="registerPhone" name="phone" required
+                            class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-emerald-500 focus:border-emerald-500">
+                    </div>
+                    <div>
+                        <button type="submit"
+                            class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-emerald-600 hover:bg-emerald-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-emerald-500">
+                            Create Account
+                        </button>
+                    </div>
+                    <div class="text-center text-sm text-gray-600">
+                        Already have an account? 
+                        <a href="/login" class="font-medium text-emerald-600 hover:text-emerald-500">Login here</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!-- Right side - Image -->
+        <div class="w-1/2 bg-emerald-600 flex items-center justify-center">
+            <div class="text-center text-white">
+                <h1 class="text-4xl font-bold mb-4">Care-Connect</h1>
+                <p class="text-xl">Join Our Healthcare Community</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Check if user is already logged in
+        document.addEventListener('DOMContentLoaded', () => {
+            const token = localStorage.getItem('token');
+            if (token) {
+                window.location.href = '/';
+            }
+        });
+
+        // Handle role selection
+        document.getElementById('registerRole').addEventListener('change', function() {
+            const specializationField = document.getElementById('specializationField');
+            specializationField.classList.toggle('hidden', this.value !== 'doctor');
+            if (this.value === 'doctor') {
+                document.getElementById('registerSpecialization').required = true;
+            } else {
+                document.getElementById('registerSpecialization').required = false;
+            }
+        });
+
+        // Handle registration form submission
+        document.getElementById('registerForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const formData = {
+                name: document.getElementById('registerName').value,
+                email: document.getElementById('registerEmail').value,
+                password: document.getElementById('registerPassword').value,
+                role: document.getElementById('registerRole').value,
+                phone: document.getElementById('registerPhone').value
+            };
+
+            if (formData.role === 'doctor') {
+                formData.specialization = document.getElementById('registerSpecialization').value;
+            }
+
+            try {
+                const response = await fetch('/api/register', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(formData)
+                });
+
+                const data = await response.json();
+                if (response.ok) {
+                    alert('Registration successful! Please login.');
+                    window.location.href = '/login';
+                } else {
+                    throw new Error(data.error || 'Registration failed');
+                }
+            } catch (error) {
+                alert(error.message);
+            }
+        });
+    </script>
+</body>
+</html>

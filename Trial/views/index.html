@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Care-Connect Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .nav-button {
+            transition: all 0.3s ease;
+        }
+        .nav-button:active {
+            transform: scale(0.95);
+        }
+        .auth-button {
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .auth-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+        }
+        .auth-button:active {
+            transform: translateY(0);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <nav class="bg-emerald-500 text-white p-4 fixed w-full z-50">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-2xl font-bold">Care-Connect</h1>
+            <div class="flex items-center space-x-6">
+                <a href="C:\Users\91884\OneDrive\Desktop\Hackathon IIIT BBSR\Trial\views\index.html" class="nav-button hover:text-gray-200 px-3 py-2 rounded-md hover:bg-emerald-600">Home</a>
+                <a href="C:\Users\91884\OneDrive\Desktop\Hackathon IIIT BBSR\Trial\views\about.html" class="nav-button hover:text-gray-200 px-3 py-2 rounded-md hover:bg-emerald-600">About Us</a>
+                <a href="C:\Users\91884\OneDrive\Desktop\Hackathon IIIT BBSR\Trial\views\services.html" class="nav-button hover:text-gray-200 px-3 py-2 rounded-md hover:bg-emerald-600">Services</a>
+                <a href="C:\Users\91884\OneDrive\Desktop\Hackathon IIIT BBSR\Trial\views\doctors.html" class="nav-button hover:text-gray-200 px-3 py-2 rounded-md hover:bg-emerald-600">Doctors</a>
+                <a href="C:\Users\91884\OneDrive\Desktop\Hackathon IIIT BBSR\Trial\views\blog.html" class="nav-button hover:text-gray-200 px-3 py-2 rounded-md hover:bg-emerald-600">Blog</a>
+                
+                <!-- Auth Buttons -->
+                <div class="auth-buttons flex space-x-4">
+                    <a href="C:\Users\91884\OneDrive\Desktop\Hackathon IIIT BBSR\Trial\views\login.html" class="auth-button bg-white text-emerald-600 px-6 py-2 rounded-full hover:bg-emerald-50 transition duration-300 font-medium">Login</a>
+                    <a href="C:\Users\91884\OneDrive\Desktop\Hackathon IIIT BBSR\Trial\views\register.html" class="auth-button border-2 border-white text-white px-6 py-2 rounded-full hover:bg-white hover:text-emerald-600 transition duration-300 font-medium">Register</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="pt-24 pb-16 px-4">
+        <div class="container mx-auto mt-10 text-center">
+            <h2 class="text-4xl font-bold text-emerald-600 mb-4">Welcome to Care-Connect</h2>
+            <p class="text-xl text-gray-600 mb-8">Your trusted healthcare platform connecting patients with doctors</p>
+            <div class="max-w-3xl mx-auto">
+                <p class="text-gray-600">Experience seamless healthcare management with our comprehensive platform. Schedule appointments, manage emergency contacts, and connect with healthcare professionals all in one place.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Features Section -->
+    <div class="container mx-auto px-4 py-12">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Appointment Management -->
+            <div class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition duration-300">
+                <div class="text-emerald-600 text-4xl mb-4">
+                    <i class="fas fa-calendar-check"></i>
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Appointment Management</h3>
+                <p class="text-gray-600">Schedule and manage your medical appointments with ease. Choose your preferred doctor and time slot.</p>
+            </div>
+
+            <!-- Emergency Contacts -->
+            <div class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition duration-300">
+                <div class="text-emerald-600 text-4xl mb-4">
+                    <i class="fas fa-phone-alt"></i>
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Emergency Contacts</h3>
+                <p class="text-gray-600">Keep your emergency contacts organized and easily accessible when you need them most.</p>
+            </div>
+
+            <!-- Doctor Directory -->
+            <div class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition duration-300">
+                <div class="text-emerald-600 text-4xl mb-4">
+                    <i class="fas fa-user-md"></i>
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Find Doctors</h3>
+                <p class="text-gray-600">Browse our extensive directory of qualified healthcare professionals by specialty and location.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- How It Works Section -->
+    <div class="bg-emerald-50 py-12">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center text-emerald-600 mb-12">How It Works</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="text-center">
+                    <div class="bg-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
+                        <span class="text-2xl text-emerald-600">1</span>
+                    </div>
+                    <h3 class="font-semibold mb-2">Create Account</h3>
+                    <p class="text-gray-600">Sign up as a patient or doctor to access our services</p>
+                </div>
+                <div class="text-center">
+                    <div class="bg-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
+                        <span class="text-2xl text-emerald-600">2</span>
+                    </div>
+                    <h3 class="font-semibold mb-2">Find Your Doctor</h3>
+                    <p class="text-gray-600">Browse through our verified doctors and choose the right one</p>
+                </div>
+                <div class="text-center">
+                    <div class="bg-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
+                        <span class="text-2xl text-emerald-600">3</span>
+                    </div>
+                    <h3 class="font-semibold mb-2">Book Appointment</h3>
+                    <p class="text-gray-600">Schedule your appointment and get instant confirmation</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-emerald-600 text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Care-Connect</h3>
+                    <p class="text-emerald-100">Your trusted healthcare platform connecting patients with doctors.</p>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-emerald-100 hover:text-white">About Us</a></li>
+                        <li><a href="#" class="text-emerald-100 hover:text-white">Find Doctors</a></li>
+                        <li><a href="#" class="text-emerald-100 hover:text-white">Services</a></li>
+                        <li><a href="#" class="text-emerald-100 hover:text-white">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Services</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-emerald-100 hover:text-white">Appointments</a></li>
+                        <li><a href="#" class="text-emerald-100 hover:text-white">Emergency Care</a></li>
+                        <li><a href="#" class="text-emerald-100 hover:text-white">Online Consultation</a></li>
+                        <li><a href="#" class="text-emerald-100 hover:text-white">Health Tips</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Contact Us</h4>
+                    <ul class="space-y-2">
+                        <li class="text-emerald-100">Email: info@careconnect.com</li>
+                        <li class="text-emerald-100">Phone: +1 234 567 890</li>
+                        <li class="text-emerald-100">Address: 123 Healthcare St, Medical City</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-emerald-500 mt-8 pt-8 text-center text-emerald-100">
+                <p>&copy; 2024 Care-Connect. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Font Awesome for icons -->
+    <script src="https://kit.fontawesome.com/your-kit-code.js" crossorigin="anonymous"></script>
+
+    <script>
+        function logout() {
+            localStorage.removeItem('token');
+            localStorage.removeItem('user');
+            window.location.href = '/login';
+        }
+    </script>
+</body>
+</html>

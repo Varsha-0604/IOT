@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Doctors - Care-Connect</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .nav-button {
+            transition: all 0.3s ease;
+        }
+        .nav-button:active {
+            transform: scale(0.95);
+        }
+        .auth-button {
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .auth-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+        }
+        .auth-button:active {
+            transform: translateY(0);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .doctor-card {
+            transition: all 0.3s ease;
+        }
+        .doctor-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <!-- Navigation -->
+    <nav class="bg-emerald-500 text-white p-4 fixed w-full z-50">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-2xl font-bold">Care-Connect</h1>
+            <div class="flex items-center space-x-6">
+                <a href="index.html" class="nav-button hover:text-gray-200 px-3 py-2 rounded-md hover:bg-emerald-600">Home</a>
+                <a href="about.html" class="nav-button hover:text-gray-200 px-3 py-2 rounded-md hover:bg-emerald-600">About Us</a>
+                <a href="services.html" class="nav-button hover:text-gray-200 px-3 py-2 rounded-md hover:bg-emerald-600">Services</a>
+                <a href="doctors.html" class="nav-button hover:text-gray-200 px-3 py-2 rounded-md hover:bg-emerald-600">Doctors</a>
+                <a href="blog.html" class="nav-button hover:text-gray-200 px-3 py-2 rounded-md hover:bg-emerald-600">Blog</a>
+                
+                <!-- Auth Buttons -->
+                <div class="auth-buttons flex space-x-4">
+                    <a href="login.html" class="auth-button bg-white text-emerald-600 px-6 py-2 rounded-full hover:bg-emerald-50 transition duration-300 font-medium">Login</a>
+                    <a href="register.html" class="auth-button border-2 border-white text-white px-6 py-2 rounded-full hover:bg-white hover:text-emerald-600 transition duration-300 font-medium">Register</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Doctors Hero Section -->
+    <div class="pt-24 pb-16 px-4 bg-emerald-50">
+        <div class="container mx-auto mt-10 text-center">
+            <h2 class="text-4xl font-bold text-emerald-600 mb-4">Our Medical Experts</h2>
+            <p class="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">Meet our team of qualified and experienced healthcare professionals.</p>
+        </div>
+    </div>
+
+    <!-- Doctors Grid -->
+    <div class="container mx-auto px-4 py-16">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Doctor 1 -->
+            <div class="doctor-card bg-white rounded-lg shadow-lg overflow-hidden">
+                <img src="https://placehold.co/400x400" alt="Dr. Sarah Johnson" class="w-full h-64 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-emerald-600">Dr. Sarah Johnson</h3>
+                    <p class="text-gray-600 mb-2">Cardiologist</p>
+                    <div class="flex items-center text-gray-500 mb-2">
+                        <i class="fas fa-phone-alt mr-2"></i>
+                        <span>+1 234 567 890</span>
+                    </div>
+                    <div class="flex items-center text-gray-500">
+                        <i class="fas fa-envelope mr-2"></i>
+                        <span>sarah.johnson@careconnect.com</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Doctor 2 -->
+            <div class="doctor-card bg-white rounded-lg shadow-lg overflow-hidden">
+                <img src="https://placehold.co/400x400" alt="Dr. Michael Chen" class="w-full h-64 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-emerald-600">Dr. Michael Chen</h3>
+                    <p class="text-gray-600 mb-2">Neurologist</p>
+                    <div class="flex items-center text-gray-500 mb-2">
+                        <i class="fas fa-phone-alt mr-2"></i>
+                        <span>+1 234 567 891</span>
+                    </div>
+                    <div class="flex items-center text-gray-500">
+                        <i class="fas fa-envelope mr-2"></i>
+                        <span>michael.chen@careconnect.com</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Doctor 3 -->
+            <div class="doctor-card bg-white rounded-lg shadow-lg overflow-hidden">
+                <img src="https://placehold.co/400x400" alt="Dr. Emily Rodriguez" class="w-full h-64 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-emerald-600">Dr. Emily Rodriguez</h3>
+                    <p class="text-gray-600 mb-2">Pediatrician</p>
+                    <div class="flex items-center text-gray-500 mb-2">
+                        <i class="fas fa-phone-alt mr-2"></i>
+                        <span>+1 234 567 892</span>
+                    </div>
+                    <div class="flex items-center text-gray-500">
+                        <i class="fas fa-envelope mr-2"></i>
+                        <span>emily.rodriguez@careconnect.com</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Doctor 4 -->
+            <div class="doctor-card bg-white rounded-lg shadow-lg overflow-hidden">
+                <img src="https://placehold.co/400x400" alt="Dr. James Wilson" class="w-full h-64 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-emerald-600">Dr. James Wilson</h3>
+                    <p class="text-gray-600 mb-2">Orthopedic Surgeon</p>
+                    <div class="flex items-center text-gray-500 mb-2">
+                        <i class="fas fa-phone-alt mr-2"></i>
+                        <span>+1 234 567 893</span>
+                    </div>
+                    <div class="flex items-center text-gray-500">
+                        <i class="fas fa-envelope mr-2"></i>
+                        <span>james.wilson@careconnect.com</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Doctor 5 -->
+            <div class="doctor-card bg-white rounded-lg shadow-lg overflow-hidden">
+                <img src="https://placehold.co/400x400" alt="Dr. Lisa Patel" class="w-full h-64 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-emerald-600">Dr. Lisa Patel</h3>
+                    <p class="text-gray-600 mb-2">Dermatologist</p>
+                    <div class="flex items-center text-gray-500 mb-2">
+                        <i class="fas fa-phone-alt mr-2"></i>
+                        <span>+1 234 567 894</span>
+                    </div>
+                    <div class="flex items-center text-gray-500">
+                        <i class="fas fa-envelope mr-2"></i>
+                        <span>lisa.patel@careconnect.com</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Doctor 6 -->
+            <div class="doctor-card bg-white rounded-lg shadow-lg overflow-hidden">
+                <img src="https://placehold.co/400x400" alt="Dr. Robert Kim" class="w-full h-64 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-emerald-600">Dr. Robert Kim</h3>
+                    <p class="text-gray-600 mb-2">Psychiatrist</p>
+                    <div class="flex items-center text-gray-500 mb-2">
+                        <i class="fas fa-phone-alt mr-2"></i>
+                        <span>+1 234 567 895</span>
+                    </div>
+                    <div class="flex items-center text-gray-500">
+                        <i class="fas fa-envelope mr-2"></i>
+                        <span>robert.kim@careconnect.com</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-emerald-600 text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Care-Connect</h3>
+                    <p class="text-emerald-100">Your trusted healthcare platform connecting patients with doctors.</p>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-emerald-100 hover:text-white">About Us</a></li>
+                        <li><a href="#" class="text-emerald-100 hover:text-white">Find Doctors</a></li>
+                        <li><a href="#" class="text-emerald-100 hover:text-white">Services</a></li>
+                        <li><a href="#" class="text-emerald-100 hover:text-white">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Contact Us</h4>
+                    <ul class="space-y-2">
+                        <li class="text-emerald-100">Email: info@careconnect.com</li>
+                        <li class="text-emerald-100">Phone: +1 234 567 890</li>
+                        <li class="text-emerald-100">Address: 123 Healthcare St, Medical City</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-emerald-500 mt-8 pt-8 text-center text-emerald-100">
+                <p>&copy; 2024 Care-Connect. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/your-kit-code.js" crossorigin="anonymous"></script>
+</body>
+</html> 

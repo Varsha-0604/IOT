@@ -1,0 +1,17 @@
+{
+  "name": "healthcare-connect",
+  "version": "1.0.0",
+  "description": "An interactive healthcare platform for patient-doctor connectivity",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "sqlite3": "^5.1.6",
+    "body-parser": "^1.20.2",
+    "bcryptjs": "^2.4.3",
+    "jsonwebtoken": "^9.0.0",
+    "nodemailer": "^6.9.1"
+  }
+} 
